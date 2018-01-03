@@ -3,11 +3,12 @@
     <router-view/>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'app'
-}
+  import '@/assets/style/init.css'
+  import '../static/iconfont/iconfont.css'
+  export default {
+    name: 'app'
+  }
 </script>
 
 <style>

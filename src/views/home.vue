@@ -1,22 +1,28 @@
 <template>
-  <div id="home">
-    <header>
-      <div class="left"></div>
-      <div class="right"></div>
-      <div></div>
-    </header>
-  </div>
+	<div id="home">
+		<div class="aaa">
+			123
+		</div>
+		<Header></Header>
+	</div>
 </template>
 <script>
-  export default {
-    name: 'home'
-  }
-</script>
+	import header from '@/components/header.vue'
+	export default {
+		name: 'home',
+		data() {
+			return {
 
+			}
+		},
+		components: {
+			'Header': header
+		}
+	}
+</script>
 <style>
-  header{
-    width: 100%;
-    height: 2.875rem;
-    background: #d62f10;
-  }
+	.aaa{
+		position: fixed;
+		top: 50px;
+	}
 </style>
