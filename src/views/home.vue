@@ -47,12 +47,7 @@
   font-size: 16px;
 }
 .searchBox{
-  height: .44rem;
-  line-height: .44rem;
-  border-bottom: 1px solid #f7f7f7;
-  font-size: 16px;
-  margin: .11rem;
-  background: #ccc;
+
 }
 
 </style>
