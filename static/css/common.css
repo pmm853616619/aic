@@ -1,0 +1,15 @@
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.white{
+  color: #fff;
+}
+.position_relative{
+  position: relative;
+}
+.position_absolute{
+  position: absolute;
+}

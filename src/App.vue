@@ -4,8 +4,7 @@
   </div>
 </template>
 <script>
-  import '@/assets/style/init.css'
-  import '../static/iconfont/iconfont.css'
+import '../static/iconfont/iconfont.css'
   export default {
     name: 'app'
   }
