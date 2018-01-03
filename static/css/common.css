@@ -13,3 +13,6 @@
 .position_absolute{
   position: absolute;
 }
+.flex{
+  display: flex;
+}
