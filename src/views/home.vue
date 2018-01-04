@@ -18,12 +18,37 @@
           <span class="text">我的消息</span>
         </div>
       </div>
-      <div class="border_8px"></div>
+      <div class="border_4px"></div>
+      <div class="titleWrap">
+        <div class="discribe">附近<span class="red">15</span>个停车场</div>
+      </div>
+      <div class="mapWrap">
+        <v-map></v-map>
+      </div>
+      <div class="titleWrap">
+        <div class="discribe">列表</div>
+      </div>
+      <div class="listWrap">
+        <div class="list clear" v-for="item in parkDetails">
+          <div class="left parkName">
+            <h4>{{item.parkName}}</h4>
+            <div>
+              <span class="red price">￥{{item.price}}/h</span>
+              <span class="parking">{{item.state}}</span>
+            </div>
+          </div>
+          <div class="right navigation red">
+            <i class="icon iconfont icon-daohang1 block red"></i>
+            <span class="block" style="font-size: .14rem">导航</span>
+          </div>
+        </div>
+      </div>
 		</div>
 	</div>
 </template>
 <script>
 	import header from '@/components/header.vue'
+	import map from '@/components/map.vue'
 	export default {
 		name: 'home',
 		data() {
@@ -33,11 +58,34 @@
           path: this.$route.path,
           leftIcon: 'icon-yun',
           rightIcon: 'icon-yonghurenxiang'
-        }
+        },
+        parkDetails: [
+          {
+            parkName:'成都市武侯区四川大学华西医院地面停车场',
+            price:'5',
+            state:'有空闲车位'
+          },
+          {
+            parkName:'成都市武侯区四川大学华西医院地面停车场',
+            price:'5',
+            state:'有空闲车位'
+          },
+          {
+            parkName:'成都市武侯区四川大学华西医院地面停车场',
+            price:'5',
+            state:'有空闲车位'
+          },
+          {
+            parkName:'成都市武侯区四川大学华西医院地面停车场',
+            price:'5',
+            state:'有空闲车位'
+          }
+        ]
 			}
 		},
 		components: {
-			'Header': header
+			'Header': header,
+      'v-map': map
 		},
     methods: {
       search: function (data) {
@@ -76,8 +124,8 @@
 .tags{
   height: .74rem;
 }
-.border_8px{
-  border-bottom:8px solid #ebebeb;
+.border_4px{
+  border-bottom:4px solid #ebebeb;
 }
 .tag{
   padding: .1rem;
@@ -106,6 +154,55 @@
 .text{
   color: #333;
   padding-left: .1rem;
+}
+.titleWrap{
+  padding: 0 .11rem;
+  font-size: .16rem;
+  margin: .2rem 0;
+}
+.discribe{
+  padding: 0 .11rem;
+  border-left: 4px solid #d62f10;
+}
+.mapWrap{
+  padding: 0 .11rem;
+  height: 1.9rem;
+}
+.listWrap{
+  margin: 0 .11rem;
+}
+.list{
+  height: .5rem;
+  padding: .2rem 0;
+  border-top:2px solid #ebebeb;
+  display: flex;
+}
+.parkName{
+  width: 85%;
+}
+.parkName h4{
+  font-size: .16rem;
+  font-weight: normal;
+  width: 100%;
+  height: .32rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.price{
+  display: inline-block;
+  width: .6rem;
+}
+.parking{
+  font-size: .14rem;
+  color: #999;
+}
+.navigation{
+  padding: 0 .1rem;
+}
+.navigation .iconfont{
+  font-size: .26rem;
+  padding-bottom: .05rem;
 }
 
 </style>

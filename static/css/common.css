@@ -16,3 +16,12 @@
 .flex{
   display: flex;
 }
+.red{
+  color: #d62f10;
+}
+.clear{
+  clear: both;
+}
+.block{
+  display: block;
+}
