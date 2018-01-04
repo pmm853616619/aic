@@ -18,6 +18,12 @@
           <span class="text">我的消息</span>
         </div>
       </div>
+      <div class="tags flex align_center">
+        <div class="tag red fontSize_14 ">未登录，无法使用该功能</div>
+        <div class="tag">
+          <span class="login">立即登录</span>
+        </div>
+      </div>
       <div class="border_4px"></div>
       <div class="titleWrap">
         <div class="discribe">附近<span class="red">15</span>个停车场</div>
@@ -44,11 +50,13 @@
         </div>
       </div>
 		</div>
+    <v-login></v-login>
 	</div>
 </template>
 <script>
 	import header from '@/components/header.vue'
 	import map from '@/components/map.vue'
+	import login from '@/components/login.vue'
 	export default {
 		name: 'home',
 		data() {
@@ -85,7 +93,8 @@
 		},
 		components: {
 			'Header': header,
-      'v-map': map
+      'v-map': map,
+      'v-login': login
 		},
     methods: {
       search: function (data) {
@@ -104,7 +113,6 @@
   height: .44rem;
   line-height: .44rem;
   padding: .11rem;
-  border-bottom: 1px solid #f7f7f7;
   font-size: 16px;
 }
 .searchBox{
@@ -123,6 +131,7 @@
 }
 .tags{
   height: .74rem;
+  border-top: 1px solid #f7f7f7;
 }
 .border_4px{
   border-bottom:4px solid #ebebeb;
@@ -144,9 +153,21 @@
   border-radius: 50%;
   background: #ec696e;
   color: #fff;
+  margin-left: .2rem;
 }
 .tag .iconBox2{
   background: #f8a759;
+}
+.login{
+  display: inline-block;
+  width: 1.04rem;
+  height: .36rem;
+  text-align: center;
+  line-height: .36rem;
+  font-size: .14rem;
+  color: #d62f10;
+  border: 1px solid #d62f10;
+  border-radius: 5px;
 }
 .iconBox .iconfont{
   font-size: .2rem;

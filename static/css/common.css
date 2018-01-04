@@ -25,3 +25,9 @@
 .block{
   display: block;
 }
+.fontSize_14{
+  font-size: .14rem;
+}
+.align_center{
+  text-align: center;
+}
