@@ -21,7 +21,7 @@
       <div class="tags flex align_center">
         <div class="tag red fontSize_14 ">未登录，无法使用该功能</div>
         <div class="tag">
-          <span class="login">立即登录</span>
+          <span class="login" @click="login">立即登录</span>
         </div>
       </div>
       <div class="border_4px"></div>
@@ -50,7 +50,7 @@
         </div>
       </div>
 		</div>
-    <v-login></v-login>
+    <v-login :show="isShow"></v-login>
 	</div>
 </template>
 <script>
@@ -88,7 +88,8 @@
             price:'5',
             state:'有空闲车位'
           }
-        ]
+        ],
+        isShow: this.isShow
 			}
 		},
 		components: {
@@ -99,6 +100,9 @@
     methods: {
       search: function (data) {
         console.log(data);
+      },
+      login: function () {
+        this.isShow = true
       }
     }
 	}
