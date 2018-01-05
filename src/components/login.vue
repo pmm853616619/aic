@@ -35,6 +35,9 @@
             }
         },
         props:['show'],
+        computed: {
+
+        },
         methods: {
           close: function () {
             return this.isShow = false

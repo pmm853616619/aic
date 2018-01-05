@@ -89,7 +89,7 @@
             state:'有空闲车位'
           }
         ],
-        isShow: this.isShow
+        isShow: false
 			}
 		},
 		components: {
@@ -103,6 +103,7 @@
       },
       login: function () {
         this.isShow = true
+        console.log(this.isShow)
       }
     }
 	}
