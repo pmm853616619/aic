@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/views/home'
+//登录
+
 // 我的
 import MyCars from '@/views/owner/myCars'
 import MyHistorySites from '@/views/owner/myHistorySites'
@@ -27,6 +29,8 @@ Vue.use(Router)
 const router = new Router({
   routes: [
     { path: '/', name: 'Home', component: Home },
+    //登录
+
     // 我的
     { path: '/myCars', name: 'MyCars', component: MyCars },
     { path: '/myHistorySites', name: 'MyHistorySites', component: MyHistorySites },
