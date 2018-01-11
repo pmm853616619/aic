@@ -1,5 +1,7 @@
 <template>
-    <div id="login" v-show="isShow">
+  <transition name="fade">
+    <div id="login" v-show="this.show">
+    <!--<div id="login" v-show="showLogin">-->
       <div class="loginBox">
         <div class="loginCon align_center">
           <div class="title">用户登录</div>
@@ -20,12 +22,11 @@
           </div>
           <i class="icon iconfont icon-WeChat"></i>
         </div>
-
         <i class="icon iconfont icon-quxiao1 close" @click="close"></i>
       </div>
     </div>
+  </transition>
 </template>
-
 <script>
     export default {
         name: "login",
@@ -34,18 +35,29 @@
 
             }
         },
+        props:['show'],
         computed: {
+          showLogin: function () {
+            return this.$store.state.login.loginShow
+          }
+        },
+        mounted: function () {
 
         },
         methods: {
           close: function () {
-
+            this.$emit('close-login')
           }
         }
     }
 </script>
-
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 #login{
   position: fixed;
   left: 0;

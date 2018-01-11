@@ -21,7 +21,8 @@
       <div class="tags flex align_center">
         <div class="tag red fontSize_14 ">未登录，无法使用该功能</div>
         <div class="tag">
-          <span class="login" :show="isShow" @click="login">立即登录</span>
+          <!--<span class="login" :show="isShow" @click="login">立即登录</span>-->
+          <span class="login" @click="login">立即登录</span>
         </div>
       </div>
       <div class="border_4px"></div>
@@ -51,14 +52,14 @@
       </div>
 		</div>
     <!--<v-login :show="isShow" @close-login="closeLogin"></v-login>-->
-    <v-login ></v-login>
+    <v-login @loginCall="load"></v-login>
 	</div>
 </template>
 <script>
 	import header from '@/components/header.vue'
 	import map from '@/components/map.vue'
-	// import login from '@/components/login.vue'
-	import login from '@/views/login/login.vue'
+	import login from '@/components/login.vue' //vuex方式
+	// import login from '@/views/login/login.vue' //组件方式
 	export default {
 		name: 'home',
 		data() {
@@ -112,10 +113,14 @@
       // },
       /*vuex方式打开登录*/
       login: function () {
-
+        this.$store.commit('loginModel',{loginShow:true,callback: this.load})
       },
       closeLogin: function () {
-        this.isShow = false;
+        this.$store.login.loginShow = false;
+        //this.isShow = false;
+      },
+      load: function () {
+        console.log('回调')
       }
     }
 	}

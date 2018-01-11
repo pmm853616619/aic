@@ -7,12 +7,17 @@ const store = new Vuex.Store({
   state: {
     login:{
       loginShow: false,
-      loginInfo: { data: '', callback: function () {
-
-        }}
+      loginInfo: {callback: function () {}}
     }
   },
-  mutations: {}
+  mutations: {
+    loginModel(state,{loginShow,callback}) {
+      state.login.loginShow = loginShow;
+      if(callback) {
+        state.login.loginInfo.callback = callback;
+      }
+    }
+  }
 });
 
 export default store

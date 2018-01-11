@@ -1,6 +1,7 @@
 <template>
   <transition name="fade">
-    <div id="login" v-show="this.show">
+    <!--<div id="login" v-show="this.show">-->
+    <div id="login" v-show="showLogin">
       <div class="loginBox">
         <div class="loginCon align_center">
           <div class="title">用户登录</div>
@@ -36,14 +37,21 @@
         },
         props:['show'],
         computed: {
+          showLogin: function () {
+            return this.$store.state.login.loginShow
+          }
+        },
+        mounted: function () {
 
         },
-      mounted: function () {
-
-      },
         methods: {
           close: function () {
-            this.$emit('close-login')
+            this.$emit('loginCall',this.$store.state.login.loginInfo.callback)
+            this.closeLogin();
+            // this.$emit('close-login')
+          },
+          closeLogin: function () {
+            this.$store.commit('loginModel',{loginShow:false})
           }
         }
     }
